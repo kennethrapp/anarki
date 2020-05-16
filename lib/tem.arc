@@ -35,6 +35,9 @@ from template 'tem-type'."
                                  'table))
                        (memtable (map car (keep no:cadr pair.args))))))
 
+(defextend len (tem) (isa tem 'tem)
+  (len ((rep tem) 1)))
+
 (defextend sref (tem v k) (isa tem 'tem)
   (if v
     (wipe rep.tem.2.k)
